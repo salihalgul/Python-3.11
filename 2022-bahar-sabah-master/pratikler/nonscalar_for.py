@@ -33,11 +33,11 @@ def cube(x):
 cubes = [cube(x) for x in range(1,11)]
 print(cubes)
 
-def squares(x):
-  return x*x
-squares = [squares(x) for x in range(1,11)]
-print(squares)
+# def squares(x):
+#   return x*x
+# squares = [squares(x) for x in range(1,11)]
+# print(squares)
 
-even_squares = [i for i in squares if i % 2 == 0]
-print("even squares:", even_squares)
+# even_squares = [i for i in squares if i % 2 == 0]
+# print("even squares:", even_squares)
 
