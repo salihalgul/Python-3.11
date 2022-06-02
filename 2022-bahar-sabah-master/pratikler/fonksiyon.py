@@ -35,3 +35,12 @@ def f(x):
     x = 4
     return x
 print(f(a))
+
+def kare(x):
+    return x * x
+def dikdortgen(x, y):
+    return x * y
+def alanlar_toplami(kare, dikdortgen):
+    toplam_alan = kare(2) + dikdortgen(4, 7)
+    return toplam_alan
+print(toplam_alan)
