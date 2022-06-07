@@ -25,3 +25,16 @@ yazdırılıp döngü kırılır.
 1 bottles of beer on the wall. 1 bottles of beer. Take one down, pass it around, 0 bottle of beer on the wall.
 There are no more bottles of beer on the wall!
 """
+for i in range(99, 0, -1):
+    if i > 2:
+        beer = f'{i} bottles of beer'
+        beer_1 = f'{i-1} bottles of beer'
+    elif i == 2:
+        beer = f'{i} bottles of beer'
+        beer_1 = f'{i-1} bottle of beer'
+    else:
+        beer = f'{i} bottle of beer'
+        beer_1 = f'{i-1} bottle of beer'
+    print(f'{beer} on the wall. {beer}. Take one down, pass it around, {beer_1} on the wall.')
+
+print('There are no more bottles of beer on the wall!')
