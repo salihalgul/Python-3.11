@@ -41,7 +41,7 @@ a = float(input("a: "))
 b = float(input("b: "))
 c = float(input("c: "))
 
-if (a>b) and (a>c):122
+if (a>b) and (a>c):
     print(f"a: {a} en büyük sayıdır.")
 elif (b>a) and (b>c):
     print(f"b: {b} en büyük sayıdır.")
