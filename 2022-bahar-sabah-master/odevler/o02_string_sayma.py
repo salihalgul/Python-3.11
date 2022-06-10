@@ -37,6 +37,7 @@ str = "Başım köpük köpük bulut İçim dışım deniz Ben bir ceviz ağacı
 
 sesli_sayim = {i : str.count(i) for i in 'aeıioöuü'}
 sertsessiz_sayim = {mahmut : str.count(mahmut) for mahmut in 'çfthskpş'}
+bosluk_sayisi = {haydar : str.count(haydar) for haydar in ' '}
 
 print(sesli_sayim)
 
@@ -46,7 +47,8 @@ mod_str = str.lower().strip()
 for i in 'aeıioöuü':
     print(f"{i} = {mod_str.count(i)}")
 
-print(f"Sert sessizler sözlüğü= {sertsessiz_sayim}")
+print(f"Sert sessizler sözlüğü = {sertsessiz_sayim}")
 for mahmut in 'çfthskpş':
     print(f"Sert sessiz {mahmut} harfi {mod_str.count(mahmut)} adettir.")
 
+print(f"Boşluk sayısı = {bosluk_sayisi} adettir.")
