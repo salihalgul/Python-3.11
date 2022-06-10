@@ -8,12 +8,10 @@
 #         print(f"{isim} ehliyet alamazsın eğitim durumun yetersiz")
 # else:
 #     print(f"{isim} ehliyet alamazsın yaşınız tutmuyor")
-
 # yazili1 = float(input("1. yazılı: "))
 # yazili2 = float(input("2. yazılı: "))
 # sozlu = float(input("sozlu: "))
 # ortalama = (yazili1 + yazili2 + sozlu) / 3
-
 # if (ortalama>=0) and (ortalama<25):
 #     print(f"ortalamanız: {ortalama} notunuz: 0")
 # elif (ortalama>=25) and (ortalama<45):
@@ -38,7 +36,7 @@ simdi = datetime.datetime.now()
 
 trafigecikis = datetime.datetime(int(tarih[0]),int(tarih[1]),int(tarih[2]))
 fark = simdi - trafigecikis
-days = fark.days
+days =fark.days
 
 if (days<=365):
     print("1. servis aralığı")      
