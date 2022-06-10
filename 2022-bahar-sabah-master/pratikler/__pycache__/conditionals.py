@@ -24,13 +24,13 @@
 email = "salihalgul@gmail.com"
 password = "abc123"
 
-girilenemail = input("email: ")
-girilenpassword = input("password: ")
+girilenemail = input("email:")
+girilenpassword = input("password:")
 
 if (girilenemail == email):
     if (girilenpassword == password):
-        print("Uygulamaya girişte email hatalı.")
+        print("Uygulamaya giriş başarılı.")
     else:
-        print("Uygulamaya giriş şifresi hatalı")
+        print("Uygulamaya parolanız hatalı")
 else:
-    print("Uygulamaya giriş başarısız.")
+    print("Uygulamaya giriş email bilginiz hatalı.")
