@@ -10,9 +10,26 @@ Size aşağıda Fonksiyon ve döngü için bir kalıp verildi. O kalıbın içer
 """
 
 
-def is_prime(number):
+
+# def is_prime(number):
     # Bu sizin asal sayı kontrol edecek fonksiyonunuz olacak
 
 
-for i in range(1, 51):
+def is_Prime(num1, num2):
+    for Mahmut in range(num1, num2+1):
+        if Mahmut > 0:
+            for i in range(2, Mahmut):
+                if (Mahmut % i == 0):
+                    print(f'{Mahmut} : False means Non-Prime')
+                    break
+            else:
+                print(f'{Mahmut} : True means Prime(Yesss yess yesss !!! i found you !!!)')
+
+num1 = int(input('Nereden başlayalım ? : '))
+num2 = int(input('Nerede bitsin ? : '))
+
+is_Prime(num1, num2)
+    
+
+# for i in range(1, 51):
     # Burası da sizin fonksiyonu 1 ile 50 arasında çağıracağınız ve True dönerse ekrana yazdıracağınız yer olacak.
