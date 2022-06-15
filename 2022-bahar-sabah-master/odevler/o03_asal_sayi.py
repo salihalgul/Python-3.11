@@ -14,22 +14,33 @@ Size aşağıda Fonksiyon ve döngü için bir kalıp verildi. O kalıbın içer
 # def is_prime(number):
     # Bu sizin asal sayı kontrol edecek fonksiyonunuz olacak
 
-
-def is_Prime(num1, num2):
-    for Mahmut in range(num1, num2+1):
-        if Mahmut > 0:
-            for i in range(2, Mahmut):
-                if (Mahmut % i == 0):
-                    print(f'{Mahmut} : False means Non-Prime')
-                    break
-            else:
-                print(f'{Mahmut} : True means Prime(Yesss yess yesss !!! i found you !!!)')
-
-num1 = int(input('Nereden başlayalım ? : '))
-num2 = int(input('Nerede bitsin ? : '))
-
-is_Prime(num1, num2)
-    
+def is_prime(number, array):
+    if array[0] == number:
+        return True
+    else:
+        step = array[0]
+        for i in range(len(array) - 1, 0, -1):
+            if array[i] % step == 0:
+                del array[i]
+    if number not in array:
+        return False
+    return is_prime(number, array[1:])
 
 # for i in range(1, 51):
     # Burası da sizin fonksiyonu 1 ile 50 arasında çağıracağınız ve True dönerse ekrana yazdıracağınız yer olacak.
+
+for i in range(1, 51):
+    bolen = 0
+    for j in range(2, i):
+        if (i%j == 0):
+            bolen += 1
+    if bolen == 0:
+        print(f"{i} sayısı asaldır.")
+    
+
+
+
+    
+
+
+
