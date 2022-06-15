@@ -29,13 +29,15 @@ def is_prime(number, array):
 # for i in range(1, 51):
     # Burası da sizin fonksiyonu 1 ile 50 arasında çağıracağınız ve True dönerse ekrana yazdıracağınız yer olacak.
 
+sonuc = []
 for i in range(1, 51):
     bolen = 0
     for j in range(2, i):
         if (i%j == 0):
             bolen += 1
     if bolen == 0:
-        print(f"{i} sayısı asaldır.")
+        sonuc.append(i)
+print(f"Asal sayılar listesi = {sonuc}")
     
 
 
