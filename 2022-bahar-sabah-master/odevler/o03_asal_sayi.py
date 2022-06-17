@@ -14,18 +14,27 @@ Size aşağıda Fonksiyon ve döngü için bir kalıp verildi. O kalıbın içer
 # def is_prime(number):
     # Bu sizin asal sayı kontrol edecek fonksiyonunuz olacak
 
+number = "1"
+is_prime = False
+
 def is_prime(number):
-  for j in range(2,number):
-    if (number % j) == 0:
+    if (number == 1):
         return False
-    j += 1
-  return True
+    elif ( number == 2):
+        return True
+    else:
+        for i in range(2, number + 1):
+            if (number % i == 0):
+                return False
+            else:
+                return True
+ 
 
 
 # for i in range(1, 51):
     # Burası da sizin fonksiyonu 1 ile 50 arasında çağıracağınız ve True dönerse ekrana yazdıracağınız yer olacak.
 
-sonuc = []
+is_prime = []
 for i in range(1, 51):
     if i == 1:
         continue
@@ -34,8 +43,8 @@ for i in range(1, 51):
         if (i % j == 0):
             bolen += 1
     if bolen == 0:
-        sonuc.append(i)
-print(f"Asal sayılar listesi = {sonuc}")
+        is_prime.append(i)
+print(f"Asal sayılar listesi = {is_prime}")
     
 
 
