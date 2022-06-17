@@ -14,17 +14,11 @@ Size aşağıda Fonksiyon ve döngü için bir kalıp verildi. O kalıbın içer
 # def is_prime(number):
     # Bu sizin asal sayı kontrol edecek fonksiyonunuz olacak
 
-def is_prime(number, array):
-    if array[0] == number:
-        return True
-    else:
-        step = array[0]
-        for i in range(len(array) - 1, 0, -1):
-            if array[i] % step == 0:
-                del array[i]
-    if number not in array:
-        return False
-    return is_prime(number, array[1:])
+def is_prime(n):
+  for j in range(2,i):
+    if (i%j) == 0:
+      return False
+  return True
 
 # for i in range(1, 51):
     # Burası da sizin fonksiyonu 1 ile 50 arasında çağıracağınız ve True dönerse ekrana yazdıracağınız yer olacak.
