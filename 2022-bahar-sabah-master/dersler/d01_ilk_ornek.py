@@ -22,3 +22,5 @@ print('burasi ise fonksiyonun disindadir')
 
 
 
+
+
