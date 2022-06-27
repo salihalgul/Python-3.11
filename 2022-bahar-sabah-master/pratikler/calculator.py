@@ -4,6 +4,7 @@ Created on Sat Jun 25 09:51:44 2022
 
 @author: salih
 """
+# %%
 
 class Calc(object):
     def __init__(self, a, b):
@@ -21,7 +22,7 @@ class Calc(object):
 
     
 print("Choose add(1), multiply(2), divide(3) ")
-selection = input("select 1,2 or 3")
+selection = input("select 1 or 2 or 3")
     
 v1 = float(input("first value : "))
 v2 = float(input("second value : "))
@@ -36,5 +37,8 @@ elif selection == "2":
 elif selection == "3":
     divide_result = c1.divide()
     print("Divide : {}".format(divide_result))    
+else:
+    print("Error There is no proper selection")
 
 
+# %%
