@@ -25,6 +25,8 @@ yazdırılıp döngü kırılır.
 1 bottles of beer on the wall. 1 bottles of beer. Take one down, pass it around, 0 bottle of beer on the wall.
 There are no more bottles of beer on the wall!
 """
+
+
 for i in range(99, 0, -1):
     if i > 2:
         beer = f'{i} bottles of beer'
