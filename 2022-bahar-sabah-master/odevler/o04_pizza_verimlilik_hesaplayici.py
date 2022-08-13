@@ -17,7 +17,7 @@ Sonrasında bu pizzaların alanlarını ve skorlarını hesaplayıp bunları ekr
 En son da hangi pizza daha avantajlı ise o pizzayı kazanan olarak belirteceğiz.
 """
 
-from math import pi
+pi = 3.14
 
 
 def get_input(text):
@@ -44,31 +44,24 @@ def get_pizza_area(diameter):
     return area
 
 
-def calculate_score(pizza):
-    area = get_pizza_area(pizza['diameter'])
-    score = area / pizza['price']
-    return score
+print("Küçük pizza performans puanı :", kucuk_pizza_performans())
+    
+def buyuk_pizza_performans():
+           
+    buyuk_pizza_fiyati = int(input("Lütfen büyük pizza fiyatı giriniz: "))
+    
+    buyuk_pizza_capi = int(input("Lütfen büyük pizza çapını giriniz: "))
+
+    buyuk_pizza_alani = pi * (buyuk_pizza_capi/2)**2
+    
+    buyuk_performans = buyuk_pizza_fiyati / buyuk_pizza_alani
+    
+    return buyuk_performans
 
 
-def main():
-    small_pizza = create_pizza('Küçük')
-    large_pizza = create_pizza('Büyük')
+print("Büyük pizza performans puanı :", buyuk_pizza_performans())
 
-    small_score = calculate_score(small_pizza)
-    large_score = calculate_score(large_pizza)
-
-    print(
-        '\nVerimlilikler:\n    Küçük: {}\n    Büyük: {}\n'.format(
-            round(small_score, 2), round(large_score, 2)
-        )
-    )
-
-    if small_score > large_score:
-        print('Küçük pizza daha verimlidir!')
-    elif large_score > small_score:
-        print('Büyük pizza daha verimlidir!')
-    else:
-        print('Pizzacınız takıntılı bir matematik mühendisidir!')
-
-
-main()
+if buyuk_pizza_performans() > kucuk_pizza_performans():
+    print("Şampiyon Büyük Pizza")
+else:
+    print("Şampiyon Küçük Pizza")
