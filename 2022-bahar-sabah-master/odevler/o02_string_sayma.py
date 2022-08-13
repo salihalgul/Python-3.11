@@ -30,25 +30,34 @@ Ben bir ceviz ağacıyım Gülhane Parkı’nda
 Ne sen bunun farkındasın ne de polis farkında
 """
 
-str = "Başım köpük köpük bulut İçim dışım deniz Ben bir ceviz ağacıyım Gülhane Parkı’nda Budak budak,şerham şerham ihtiyar bir ceviz Ne sen bunun farkındasın ne polis farkında Ben bir ceviz ağacıyım Gülhane Parkı’nda Ne sen bunun farkındasın ne de polis farkında"
+string_to_count = """
+Başım köpük köpük bulut
+İçim dışım deniz
+Ben bir ceviz ağacıyım Gülhane Parkı’nda
+Budak budak, şerham şerham ihtiyar bir ceviz
+Ne sen bunun farkındasın ne polis farkında
 
-# sesli = ["a", "e", "ı", "i", "o", "ö", "u", "ü"]
-# sesli_sayim = {i : str.count(i) for i in sesli}
+Ben bir ceviz ağacıyım Gülhane Parkı’nda
+Ne sen bunun farkındasın ne de polis farkında
+"""
 
-sesli_sayim = {i : str.count(i) for i in 'aeıioöuü'}
-sertsessiz_sayim = {mahmut : str.count(mahmut) for mahmut in 'çfthskpş'}
-bosluk_sayisi = {haydar : str.count(haydar) for haydar in ' '}
 
-print(sesli_sayim)
+def sayma(metin, sayilacak):
+    lower_string = metin.lower()
+    count_dict = {}
 
-mod_str = str.lower().strip()
+    for i in sayilacak:
+        count_dict.update(
+            {
+                i: lower_string.count(i)
+            }
+        )
 
-# for i in sesli:
-for i in 'aeıioöuü':
-    print(f"{i} = {mod_str.count(i)}")
+    return count_dict
 
-print(f"Sert sessizler sözlüğü = {sertsessiz_sayim}")
-for mahmut in 'çfthskpş':
-    print(f"Sert sessiz {mahmut} harfi {mod_str.count(mahmut)} adettir.")
 
-print(f"Boşluk sayısı = {bosluk_sayisi} adettir.")
+sayilmis = sayma(string_to_count, 'aeıioöuü')
+
+for key, value in sayilmis.items():
+    print(f'{key} = {value}')
+

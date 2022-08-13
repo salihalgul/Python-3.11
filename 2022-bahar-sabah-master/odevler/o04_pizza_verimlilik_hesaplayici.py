@@ -17,39 +17,58 @@ Sonrasında bu pizzaların alanlarını ve skorlarını hesaplayıp bunları ekr
 En son da hangi pizza daha avantajlı ise o pizzayı kazanan olarak belirteceğiz.
 """
 
-pi = 3.14
-
-def kucuk_pizza_performans():
-           
-    pizza_fiyati = int(input("Lütfen küçük pizza fiyatı giriniz: "))
-    
-    pizza_capi = int(input("Lütfen küçük pizza çapını giriniz: "))
-
-    pizza_alani = pi * (pizza_capi/2)**2
-    
-    performans = pizza_fiyati / pizza_alani
-    
-    return performans
+from math import pi
 
 
-print("Küçük pizza performans puanı :", kucuk_pizza_performans())
-    
-def buyuk_pizza_performans():
-           
-    buyuk_pizza_fiyati = int(input("Lütfen büyük pizza fiyatı giriniz: "))
-    
-    buyuk_pizza_capi = int(input("Lütfen büyük pizza çapını giriniz: "))
-
-    buyuk_pizza_alani = pi * (buyuk_pizza_capi/2)**2
-    
-    buyuk_performans = buyuk_pizza_fiyati / buyuk_pizza_alani
-    
-    return buyuk_performans
+def get_input(text):
+    user_input = input(text + ': ')
+    if user_input.isdigit():
+        return int(user_input)
+    else:
+        print('Lütfen bir sayı giriniz!!!!')
+        return get_input(text)
 
 
-print("Büyük pizza performans puanı :", buyuk_pizza_performans())
+def create_pizza(size):
+    diameter = get_input(f'{size} pizza için çap')
+    price = get_input(f'{size} pizza için fiyat')
+    return {
+        'diameter': diameter,
+        'price': price,
+    }
 
-if buyuk_pizza_performans() > kucuk_pizza_performans():
-    print("Şampiyon Büyük Pizza")
-else:
-    print("Şampiyon Küçük Pizza")
+
+def get_pizza_area(diameter):
+    r = diameter / 2
+    area = pi * (r ** 2)
+    return area
+
+
+def calculate_score(pizza):
+    area = get_pizza_area(pizza['diameter'])
+    score = area / pizza['price']
+    return score
+
+
+def main():
+    small_pizza = create_pizza('Küçük')
+    large_pizza = create_pizza('Büyük')
+
+    small_score = calculate_score(small_pizza)
+    large_score = calculate_score(large_pizza)
+
+    print(
+        '\nVerimlilikler:\n    Küçük: {}\n    Büyük: {}\n'.format(
+            round(small_score, 2), round(large_score, 2)
+        )
+    )
+
+    if small_score > large_score:
+        print('Küçük pizza daha verimlidir!')
+    elif large_score > small_score:
+        print('Büyük pizza daha verimlidir!')
+    else:
+        print('Pizzacınız takıntılı bir matematik mühendisidir!')
+
+
+main()

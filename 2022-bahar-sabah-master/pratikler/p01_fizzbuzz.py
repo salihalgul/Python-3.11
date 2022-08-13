@@ -22,6 +22,3 @@ for i in range(1, 51):
         print('Buzz')
     else:
         print(i)
-
-*x,y,z=(4, 8, 15, 16, 23, 42)
-print(x,y,z) 
